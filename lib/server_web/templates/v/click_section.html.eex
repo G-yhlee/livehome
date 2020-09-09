@@ -1,0 +1,64 @@
+<% alias ServerWeb.StockLive %>
+<td colspan="3" style="width: 300px">
+
+  <%= StockLive.render_board(@assigns) %>
+
+
+</td>
+<td colspan="4">
+  <textarea type="text"  style="
+display: grid ;
+  color: white ; width: 300px;height: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px; margin: 0px;
+ " >
+현재 선택된 블록은
+
+[ <%= @assigns.o1.click |> String.slice(9..100) |> String.upcase %> ] 블록 입니다.
+
+<%= @assigns.o1.click |> String.slice(9..100)  %>의 주당 주식 가치는
+
+<%= @price %> 입니다.
+
+
+
+[ <%= @assigns.o1.click |> String.slice(9..100) |> String.upcase %> ]의 배당 예정일은
+
+[ YYYY.MM.DD ] 입니다.
+
+자세한 정보를 알고싶다면,
+스크롤을 내리세요.
+
+
+
+
+
+[ <%= @assigns.o1.click |> String.slice(9..100) |> String.upcase %> ] 에 대한
+
+의견을 남기고 공유하세요.
+
+================================
+
+방송대 여러분 반갑습니다.
+블록의 키조작은
+a - 왼쪽방향 움직임
+s - 아래쪽방향움직임
+d - 오른쪽방향 움직임
+w - 회전 움직임 을 통해 가능합니다.
+
+궁금한점은: raetam@knou.ac.kr 로 메일주시면 성심껏 답변드리겠습니다 ^^
+
+<%# -- STOCK BLOCK 움직임 설명 --
+좌로 이동 : a 키
+회전 이동 : w 키
+우로 이동 : d 키
+아래 이동 : s 키
+
+블럭이 움직이지 않는다면
+한영키를 눌러주세요 %>
+
+
+
+
+ </textarea>
+</td>

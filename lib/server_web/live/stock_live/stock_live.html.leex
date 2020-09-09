@@ -1,0 +1,60 @@
+    <%= V.render("buttons.html",o1: assigns.o1) %>
+    <%= V.render("menu.html", c: assigns) %>
+    <%#= V.render("tables.html", o1: assigns.o1, assigns: assigns) %>
+<% alias ServerWeb.V.Tables %>
+<% alias ServerWeb.Helper.T %>
+<% alias ServerWeb.StockLive %>
+<% alias Server.Game
+  alias ServerWeb.Data %>
+
+<table style="margin: 0 padding: 0" >
+
+<div style=";text-align:center;  border-width: 1px; border-color: white;border-style: solid;">
+  <tr style=" color:#d5dae6;background-color:#1e2126">
+    <th style="text-align: center">로고</th><th style="text-align: center">TICKER</th><th style="text-align: center">가격</th><th style="text-align: center">시초가</th><th style="text-align: center">가격차이</th>
+  </tr>
+</div>
+
+
+  <%= for key <- assigns.o1 |> Tables.ticker_list do %>
+    <tr style= "color: #d5dae6;background-color:#242930;text-align:center;">
+      <td style="text-align: center " phx-click="logo"   phx-value-click=<%=key%> > <img src="https://storage.googleapis.com/iex/api/logos/<%= key |> Atom.to_string |> String.upcase |> String.slice(9..100)%>.png" alt="ticker_img" height="35" width="35"></td>
+      <th style="text-align: center"> <%= key |> Atom.to_string |> String.slice(9..100)  %></th>
+
+      <td style="text-align: center"> <%=  Tables.stable_price(assigns.o1,key)%> </td>
+      <td style="text-align: center"> <%=  Tables.open_price(assigns.o1,key) %></td>
+      <td style="<%= Tables.background_color(Tables.gap(Tables.open_price(assigns.o1,key),Tables.stable_price(assigns.o1,key))) %>"> <%=  Tables.gap(Tables.open_price(assigns.o1,key),Tables.stable_price(assigns.o1,key)) %></td>
+    </tr>
+    <tr>
+    <%=
+    case key  |> Atom.to_string== @o1[:click] do
+    true -> V.render("click_section.html",
+    assigns: assigns,
+    price: Tables.stable_price(assigns.o1,key),
+    #time: "#{@o1[:"#{key}"] |> Enum.at(@o1.state) |> Map.get("date")}  #{@o1[:"#{key}"] |> Enum.at(@o1.state) |> Map.get("label")}"
+
+    )
+    false -> nil
+    end
+     %></tr>
+
+  <% end %>
+</table>
+
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<table >
+  <tr><th>KEY</th><th>VALUE</th></tr>
+  <%= for key <- Map.keys(assigns.o1) do %>
+  <tr><td><button phx-click="KEY" , phx-value-key=<%=key%>>  <%=  "#{key}" %></button></td><td> <%= (inspect assigns.o1[:"#{key}"]) |> String.slice(0..20) %></td></tr>
+  <% end %>
+</table>
+
+
+
+
+<% ~s" sad" %>

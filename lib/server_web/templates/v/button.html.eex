@@ -1,0 +1,5 @@
+<% alias ServerWeb.V.Button %>
+  <button style=" color: #d5dae6; background-color: black;text-align: center" phx-click="button"   phx-value-click=<%=@phx_click%> >
+  <%=# @phx_click %>
+  <%= Button.button_name(@phx_click,@data) %>
+  </button>

@@ -1,0 +1,7 @@
+<section class="phx-hero">
+  <div style= "color: black" phx-window-keydown="keystroke">
+  <h1> 테트리스 </h1>
+  <h2>Score: <%= @game.score %></h2>
+  <%= render_board(assigns) %>
+  </div>
+</section>

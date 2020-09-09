@@ -1,0 +1,9 @@
+<br>
+<button  style="color: white; background-color: black;text-align: center">  <a href="/"> HOME </a> </button>
+<button  style="color: white; background-color: black;text-align: center">  <a href="/stock"> LIVE-STOCK </a> </button>
+<%# <button  style="color: white; background-color: black;text-align: center">  <a href="/game"> LIVE-GAME </a> </button>
+<button  style="color: white; background-color: black;text-align: center">  <a href="/gallery"> LIVE-GALLERY </a> </button>
+<button  style="color: white; background-color: black;text-align: center">  <a href="/tetris"> LIVE-TETRIS </a> </button>
+<button  style="color: white; background-color: black;text-align: center">  <a href="/photo"> LIVE-PHOTO </a> </button> %>
+<%# <button  style="color: white; background-color: black;text-align: center">  <a href="/algorithm"> LIVE-algorithm </a> </button> %>
+<button  style="color: white; background-color: black;text-align: center">  <a href="/note"> LIVE-NOTE </a> </button>

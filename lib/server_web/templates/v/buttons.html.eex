@@ -1,0 +1,22 @@
+<% alias ServerWeb.V %>
+<% alias ServerWeb.V.Tables %>
+<% alias ServerWeb.Helper.T %>
+<% alias ServerWeb.V.Button %>
+
+<%= case @o1[:auto_state]  do
+  1 -> V.render("button.html",phx_click: "auto", data: @o1)
+  0 -> [
+       V.render("button.html",phx_click: "+", data: @o1),
+       V.render("button.html",phx_click: "auto", data: @o1),
+       V.render("button.html",phx_click: "-", data: @o1),
+        ]
+ end %>
+
+
+
+
+
+
+<%= for key <- @o1 |> Tables.ticker_list |> Enum.take(1) do %>
+<button style="color: white; background-color: black;text-align: center"> <%=  "#{@o1[:"#{key}"] |> Enum.at(@o1.state) |> Map.get("date")}  #{@o1[:"#{key}"] |> Enum.at(@o1.state) |> Map.get("label")}"   %></button>
+<% end %>

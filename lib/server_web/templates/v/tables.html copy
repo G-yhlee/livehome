@@ -1,0 +1,22 @@
+# 가짜
+  <%= for key <- @o1 |> Tables.ticker_list do %>
+    <tr style= "color: #d5dae6;background-color:#242930;text-align:center;">
+      <td style="text-align: center "> <img src="https://storage.googleapis.com/iex/api/logos/<%= key |> Atom.to_string |> String.upcase |> String.slice(9..100)%>.png" alt="ticker_img" height="35" width="35"></td>
+      <th style="text-align: center"> <%= key |> Atom.to_string |> String.slice(9..100)  %></th>
+
+      <td style="text-align: center"> <%=  Tables.stable_price(@o1,key)%> </td>
+      <td style="text-align: center"> <%=  Tables.open_price(@o1,key) %></td>
+      <td style="<%= Tables.background_color(Tables.gap(Tables.open_price(@o1,key),Tables.stable_price(@o1,key))) %>"> <%=  Tables.gap(Tables.open_price(@o1,key),Tables.stable_price(@o1,key)) %></td>
+    </tr>
+  <% end %>
+  # 진짜
+  <%= for key <- @o1 |> Tables.ticker_list do %>
+    <tr style= "color: #d5dae6;background-color:#242930;text-align:center;">
+      <td style="text-align: center "> <img src="https://storage.googleapis.com/iex/api/logos/<%= key |> Atom.to_string |> String.upcase |> String.slice(9..100)%>.png" alt="ticker_img" height="35" width="35"></td>
+      <th style="text-align: center"> <%= key |> Atom.to_string |> String.slice(9..100)  %></th>
+
+      <td style="text-align: center"> <%=  Tables.stable_price(@o1,key)%> </td>
+      <td style="text-align: center"> <%=  Tables.open_price(@o1,key) %></td>
+      <td style="<%= Tables.background_color(Tables.gap(Tables.open_price(@o1,key),Tables.stable_price(@o1,key))) %>"> <%=  Tables.gap(Tables.open_price(@o1,key),Tables.stable_price(@o1,key)) %></td>
+    </tr>
+  <% end %>

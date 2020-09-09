@@ -1,0 +1,24 @@
+<% alias ServerWeb.Templates.Layout.Root %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= csrf_meta_tag() %>
+    <%= live_title_tag assigns[:page_title] || "MY", suffix: " DEV LOG" %>
+    <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </head>
+  <body style="background-color: #d5dae6; mrgin: 0; padding: 0 0 0 0; background-color: black ;color: white">
+  <div style = " vertical-align: middle; margin: 0; padding: 0 0 0 0; height:8vh;weidth:50vh; padding: 10px; text-align: center; ;background-color: black;  font: small-caps bold 50px/30px Staatliches, Sans-serif ; color: yellow ;  font-size: 3.5vw; " class="phx-logo">
+ <%# <a href="/" style=" padding: 6px 10px 10px 6px ;color: yellow ; border: 1px solid yellow; border-radius: 3px;">  <%= Root.title(@conn.path_info)%>
+ <a href="/" style=" padding: 6px 10px 10px 6px ;color: yellow ;">  <%= Root.title(@conn.path_info)%></a>
+  </div>
+
+
+
+    <%= @inner_content %>
+  </body>
+</html>

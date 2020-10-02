@@ -1,0 +1,22 @@
+
+<br>
+<%= inspect :현재시각 %>
+<%= inspect time(:now) %> <br><br><br>
+<%= inspect time_ago({{2020, 10, 2}, {4, 27, 14}}) %>
+<%# <%= inspect DateTime.from_naive!(~N[2018-11-15 10:00:00], "Europe/Copenhagen",DateTime.now("Etc/UTC")) %>
+<table >
+<div style=";text-align:center;  border-width: 1px; border-color: white;border-style: solid;">
+  <tr style=" color:#d5dae6;background-color:#1e2126">
+    <th style="text-align: center">파일이름</th>
+    <th style="text-align: center">시각</th>
+  </tr>
+</div>
+<%= for {fnm, time } =list <- sorted_ls do %>
+<tr>
+      <td style="text-align: center"><%=  fnm %></th>
+      <td style="text-align: center"><%= inspect time %></th>
+</tr>
+
+
+<% end %>
+</table>

@@ -23,6 +23,7 @@ defmodule ServerWeb.Router do
     live "/gallery", GalleryLive
     live "/photo", PhotoLive
     live "/algorithm", AlgorithmLive
+    live "/git", GitLive
 
     live "/tetris", TetrisLive.Welcome, :welcome
     live "/tetris/playing", TetrisLive.Playing, :playing

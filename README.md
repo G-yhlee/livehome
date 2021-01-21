@@ -11,3 +11,6 @@
 - live_stock
 - live_note
 - live_git
+- live_api
+- live_kakao
+

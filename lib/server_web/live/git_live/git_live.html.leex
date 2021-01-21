@@ -1,8 +1,7 @@
 
-<br>
-<%= inspect :현재시각 %>
-<%= inspect time(:now) %> <br><br><br>
-<%= inspect time_ago({{2020, 10, 2}, {4, 27, 14}}) %>
+<%=# inspect :현재시각 %>
+<%=# inspect time(:now) %>
+<%=# inspect time_ago({{2020, 10, 2}, {4, 27, 14}}) %>
 <%# <%= inspect DateTime.from_naive!(~N[2018-11-15 10:00:00], "Europe/Copenhagen",DateTime.now("Etc/UTC")) %>
 <table >
 <div style=";text-align:center;  border-width: 1px; border-color: white;border-style: solid;">
@@ -14,7 +13,7 @@
 <%= for {fnm, time } =list <- sorted_ls do %>
 <tr>
       <td style="text-align: center"><%=  fnm %></th>
-      <td style="text-align: center"><%= inspect time %></th>
+      <td style="text-align: center"><%= time |> time_ago %></th>
 </tr>
 
 

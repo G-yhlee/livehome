@@ -8,3 +8,4 @@
 <button  style="color: white; background-color: black;text-align: center">  <a href="/photo"> LIVE-PHOTO </a> </button> %>
 <%# <button  style="color: white; background-color: black;text-align: center">  <a href="/algorithm"> LIVE-algorithm </a> </button> %>
 <button  style="color: white; background-color: black;text-align: center">  <a href="/note"> LIVE-NOTE </a> </button>
+<button  style="color: white; background-color: black;text-align: center">  <a href="/kakao"> LIVE-kakao </a> </button>
